@@ -1,3 +1,4 @@
+package app;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class App {
     static String STATES_PACKAGE = "states";
 
 
-    private static State getState(String stateAbbr) {
+    public static State getState(String stateAbbr) {
         try {
             String className = STATES_PACKAGE + ".State" + stateAbbr;
 
@@ -45,6 +46,7 @@ public class App {
         System.out.println("What is your state abbr?");
         String stateAbbr = scanner.nextLine();
         State state = getState(stateAbbr);
+        
         if(state != null) {
             System.out.println("What is your car model?");
             String carModel = scanner.nextLine();
